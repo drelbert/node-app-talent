@@ -1,0 +1,11 @@
+mat-form-field,
+ input {
+  display: flex;
+  flex-direction: column;
+}
+
+:host {
+  display: block;
+  margin-bottom: 1rem;
+}
+

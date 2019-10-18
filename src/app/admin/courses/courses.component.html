@@ -1,0 +1,6 @@
+<mat-card *ngIf='courses.length > 0'>
+  <header *ngFor='let course of courses'>
+    {{ course.title }}
+    {{ course.description }}
+  </header>
+</mat-card>

@@ -1,0 +1,57 @@
+<mat-card>
+ <form (submit)="onAddCourse(postForm)" #postForm="ngForm">
+  <mat-form-field>
+        <input
+               matInput
+               name="title"
+               ngModel
+               required
+               minlength ="3"
+               placeholder="Course Title"
+               #title="ngModel">
+               <mat-error *ngIf="title.invalid">Please enter a Course Title</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+          <input
+                 matInput
+                 name="description"
+                 ngModel
+                 required
+                 minlength ="3"
+                 placeholder="Course Description"
+                 #title="ngModel">
+                 <mat-error *ngIf="title.invalid">Please enter a Course Description</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input
+                   matInput
+                   name="courseCode"
+                   ngModel
+                   required
+                   minlength ="3"
+                   placeholder="Course Code"
+                   #title="ngModel">
+                   <mat-error *ngIf="title.invalid">Please enter a Course Code</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+              <input
+                     matInput
+                     name="date"
+                     ngModel
+                     required
+                     minlength ="3"
+                     placeholder="Date"
+                     #title="ngModel">
+                     <mat-error *ngIf="title.invalid">Please enter a Course Date</mat-error>
+            </mat-form-field>
+
+
+      <button
+       mat-raised-button
+       color="primary"
+       type="submit">ADD COURSE</button>
+    </form>
+</mat-card>
