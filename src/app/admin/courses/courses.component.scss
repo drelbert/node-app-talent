@@ -1,0 +1,17 @@
+.parent {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+.courseCard {
+    background-color: #3d3b3b;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex: 2;
+}
+
+button {
+  background-color: #FF6859;
+}
+

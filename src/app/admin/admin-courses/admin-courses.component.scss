@@ -1,11 +1,19 @@
 mat-form-field,
- input {
+input {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
+}
+
+mat-error { 
+  color: #ffffff;
+}
+
+button { 
+  background-color: #B15DFF;
 }
 
 :host {
-  display: block;
+  width: relative;
   margin-bottom: 1rem;
+  margin-left: 1rem;
 }
-

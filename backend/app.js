@@ -1,9 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const coursesRoutes = require('./routes/admin');
-
 const app = express();
+
+const adminRoutes = require('./routes/admin');
+
 
 //Middleware chain, note that next is also function to allow continuation to next middleware
 //When sending a res, never use next so no execution of res related code
@@ -16,6 +17,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/api/courses', coursesRoutes);
+app.use('/api/courses', adminRoutes);
 
 module.exports = app;

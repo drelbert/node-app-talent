@@ -1,4 +1,9 @@
-# backend start use 'npm run start:server'
+# backend start 
+    open term in main folder
+    use: nodemon server.js
+
+# Ng start
+    ng serve -o
 
 
 
