@@ -12,6 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.component';
 import { CoursesComponent } from './admin/courses/courses.component';
+import { AppRoutingModule } from './app-routing,module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CoursesComponent } from './admin/courses/courses.component';
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
