@@ -1,42 +1,16 @@
-const fs = require('fs');
-const path = require('path');
+const mongoose = require('mongoose');
 
-//Setting p as a global 
-const p = path.join(
-    path.dirname(process.mainModule.filename), 
-   'data', 
-   'courses.json'
-   );
 
-//Helper function 
-const getCoursesFromFile = cb => {
-    fs.readFile(p, (err, fileContent) => {
-       if(err) {
-           cb([]);
-       } else {
-           cb(JSON.parse(fileContent));
-       }
-    });
-}
+const courseSchema = mongoose.Schema({
+  title: { type: String, required: true },
+  courseId: { type: String, required: true },
+  description: { type: String, required: true },
+  date: { type: String, required: true }
+  
+});
 
-module.exports = class Course {
-   constructor(title) {
-        this.title = title;
-   }
+// Turn schema into model here 
+module.exports = mongoose.model('Course', courseSchema);
 
-   //Save method
-   save(){
-       getCoursesFromFile(courses => {
-         courses.push(this);
-         fs.writeFile(p, JSON.stringify(courses), err => {
-           console.log(err);
-         });
-       });
-   }
-   
-   //Utility function
-   static fetchAll(cb) {
-    getCoursesFromFile(cb);
-   }
-};
+    
 

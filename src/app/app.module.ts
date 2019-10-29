@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { MatInputModule,
          MatCardModule,
          MatButtonModule
@@ -14,7 +15,6 @@ import { AdminCoursesComponent } from './admin/admin-courses/admin-courses.compo
 import { CoursesComponent } from './admin/courses/courses.component';
 import { AppRoutingModule } from './app-routing,module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +25,14 @@ import { AppRoutingModule } from './app-routing,module';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

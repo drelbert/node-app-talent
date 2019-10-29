@@ -12,11 +12,8 @@ export class CourseService {
   constructor(private http: HttpClient) {}
 
   getCourses() {
-    this.http
-      .get<{ message: string; courses: Course[] }>(
-        'http://localhost:3000/api/courses'
-      )
-      .subscribe(courseData => {
+    this.http.get<{message: string, courses: Course[]}>('http://localhost:3000/api/courses')
+      .subscribe((courseData) => {
         this.courses = courseData.courses;
         this.coursesUpdated.next([...this.courses]);
       });
@@ -26,8 +23,9 @@ export class CourseService {
     return this.coursesUpdated.asObservable();
   }
 
-  addCourse(title: string, description: string, courseCode: string, date: string) {
-    const course: Course = {  title, description, courseCode, date };
+
+  addCourse(title: string, courseId: string, description: string, date: string) {
+    const course: Course = {  title, courseId, description, date };
     this.http
       .post<{ message: string }>('http://localhost:3000/api/courses', course)
       .subscribe(responseData => {
@@ -35,6 +33,6 @@ export class CourseService {
         this.courses.push(course);
         this.coursesUpdated.next([...this.courses]);
       });
-
   }
 }
+

@@ -3,8 +3,9 @@
   <mat-form-field>
         <input
                matInput
+               type="text"
                name="title"
-               ngModel
+               [ngModel]="course?.title"
                required
                minlength ="3"
                placeholder="Course Title"
@@ -15,42 +16,45 @@
       <mat-form-field>
           <input
                  matInput
+                 type="text"
                  name="description"
-                 ngModel
+                 [ngModel]="course?.description"
                  required
                  minlength ="3"
                  placeholder="Course Description"
-                 #title="ngModel">
+                 #description="ngModel">
                  <mat-error *ngIf="title.invalid">Please enter a Course Description</mat-error>
         </mat-form-field>
 
         <mat-form-field>
             <input
                    matInput
-                   name="courseCode"
-                   ngModel
+                   type="text"
+                   name="courseId"
+                   [ngModel]="course?.courseId"
                    required
                    minlength ="3"
-                   placeholder="Course Code"
-                   #title="ngModel">
-                   <mat-error *ngIf="title.invalid">Please enter a Course Code</mat-error>
+                   placeholder="Course ID"
+                   #courseId="ngModel">
+                   <mat-error *ngIf="title.invalid">Please enter a Course ID</mat-error>
           </mat-form-field>
 
           <mat-form-field>
               <input
                      matInput
+                     type="text"
                      name="date"
-                     ngModel
+                     [ngModel]="course?.date"
                      required
                      minlength ="3"
                      placeholder="Date"
-                     #title="ngModel">
+                     #date="ngModel">
                      <mat-error *ngIf="title.invalid">Please enter a Course Date</mat-error>
             </mat-form-field>
 
 
       <button
        mat-raised-button
-       type="submit">ADD COURSE</button>
+       type="submit">SAVE</button>
     </form>
 </mat-card>
